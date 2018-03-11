@@ -20556,7 +20556,6 @@
       <ul>
         <li>It is a Syntax Error if ContainsUseStrict of |AsyncFunctionBody| is *true* and IsSimpleParameterList of |UniqueFormalParameters| is *false*.</li>
         <li>It is a Syntax Error if HasDirectSuper of |AsyncMethod| is *true*.</li>
-        <li>It is a Syntax Error if |UniqueFormalParameters| Contains |AwaitExpression| is *true*.</li>
         <li>It is a Syntax Error if any element of the BoundNames of |UniqueFormalParameters| also occurs in the LexicallyDeclaredNames of |AsyncFunctionBody|.</li>
       </ul>
       <emu-grammar>
@@ -20570,7 +20569,6 @@
       </emu-grammar>
       <ul>
         <li>It is a Syntax Error if ContainsUseStrict of |AsyncFunctionBody| is *true* and IsSimpleParameterList of |FormalParameters| is *false*.</li>
-        <li>It is a Syntax Error if |FormalParameters| Contains |AwaitExpression| is *true*.</li>
         <li>If the source code matching this production is strict code, the Early Error rules for <emu-grammar>UniqueFormalParameters : FormalParameters</emu-grammar> are applied.</li>
         <li>If the source code matching this production is strict code, it is a Syntax Error if |BindingIdentifier| is present and the StringValue of |BindingIdentifier| is `"eval"` or `"arguments"`.</li>
         <li>It is a Syntax Error if any element of the BoundNames of |FormalParameters| also occurs in the LexicallyDeclaredNames of |AsyncFunctionBody|.</li>
@@ -25298,7 +25296,7 @@
             1. If _parameters_ Contains |SuperProperty| is *true*, throw a *SyntaxError* exception.
             1. If _kind_ is `"generator"` or `"async generator"`, then
               1. If _parameters_ Contains |YieldExpression| is *true*, throw a *SyntaxError* exception.
-            1. If _kind_ is `"async"` or `"async generator"`, then
+            1. If _kind_ is `"async generator"`, then
               1. If _parameters_ Contains |AwaitExpression| is *true*, throw a *SyntaxError* exception.
             1. If _strict_ is *true*, then
               1. If BoundNames of _parameters_ contains any duplicate elements, throw a *SyntaxError* exception.
